@@ -36,6 +36,7 @@ class Profile: UIViewController,MFMessageComposeViewControllerDelegate {
                if personatipo == "1"
                                   {
                                    if temp == true {
+                                    userID = user1
                                         self.performSegue(withIdentifier: "listaPacientes", sender: nil)
                                    }
                                      
@@ -115,7 +116,7 @@ class Profile: UIViewController,MFMessageComposeViewControllerDelegate {
         let apellido = value1?["apellido"] as? String
         
             
-            self.nombre.text = nombre! + " " + apellido!
+            self.nombre.text = (nombre ?? "") + " " + (apellido ?? "")
         })
         db.child("users/\(userID)/frecuencia_cardiaca").queryLimited(toLast: 1).observe(.childAdded, with: { snapshot in
             
