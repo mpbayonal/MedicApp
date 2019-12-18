@@ -61,12 +61,15 @@ class login2ViewController: FormViewController {
                       let cuidador = value?["cuidador"] as? String ?? ""
                         if cuidador == "0"{
                             personatipo = "0"
+                            user1 = userID
+                            print("irHome")
                             self.performSegue(withIdentifier: "loginToHome", sender: nil)}
-                        else
+                         if cuidador == "1"
                         {
                              self.performSegue(withIdentifier: "loginToHomeCuidador", sender: nil)
                             personatipo = "1"
                             user1 = userID
+                            print(userID)
                             
                         }
                     // ...

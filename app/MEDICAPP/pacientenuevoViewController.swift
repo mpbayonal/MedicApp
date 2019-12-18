@@ -34,7 +34,7 @@ class pacientenuevoViewController: FormViewController {
     {
         let db = Database.database().reference()
         
-        
+        userID = user1
                   let uuid = UUID().uuidString
             
             db.child("users/\(uuid)/perfil/nombre").setValue(nombre)

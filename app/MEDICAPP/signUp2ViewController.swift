@@ -105,18 +105,21 @@ class signUp2ViewController: FormViewController {
             db.child("users/\(String(describing: userID))/perfil/peso").setValue(peso)
             db.child("users/\(String(describing: userID))/perfil/telefono").setValue(telefono)
             
-            if cuidador {
+            if cuidador == true {
                db.child("users/\(String(describing: userID))/perfil/cuidador").setValue("1")
                 self.performSegue(withIdentifier: "signUptoHomeCuidador", sender: nil)
                 personatipo = "1"
                 user1 = userID
+                 userID = user1
             }
-            else
+            if cuidador ==  false
             {
                 db.child("users/\(String(describing: userID))/perfil/cuidador").setValue("0")
+                print("irHome")
                 self.performSegue(withIdentifier: "signUptoHome", sender: nil)
                 
                 user2 = userID
+                
                 personatipo = "0"
             }
             

@@ -56,12 +56,13 @@ class pacientesViewController: UIViewController, UITableViewDataSource, UITableV
                 
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "HH':'mm"
+                userID = user1
                 
                 db.child("users/\(userID)/pacientes").observe(.value, with: { snapshot in
                     self.pillList.removeAll()
                     print("paso2222")
                    
-                   
+                   print(userID)
                    for child in snapshot.children {
                    
                     let value1 = snapshot.value as? [String: AnyObject]
@@ -150,6 +151,7 @@ class pacientesViewController: UIViewController, UITableViewDataSource, UITableV
                
                 let pill = pillList[indexPath.row]
                 user2 = pill.uuid
+                user1 = userID
                 personatipo = "1"
                 
                 self.performSegue(withIdentifier: "signUptoHome", sender: nil)
@@ -163,7 +165,7 @@ class pacientesViewController: UIViewController, UITableViewDataSource, UITableV
             
             func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
             {
-                var userID = Auth.auth().currentUser!.uid
+                userID = user1
                 let pill = pillList[indexPath.row]
                 
                

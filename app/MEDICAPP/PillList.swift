@@ -201,7 +201,7 @@ class PillList: UIViewController, UITableViewDataSource, UITableViewDelegate {
             else
             {
                 cell.backgroundColor = UIColor.white
-                cell.pillImage.image = #imageLiteral(resourceName: "pill")
+               
             }
         }
         
