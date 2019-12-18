@@ -12,7 +12,7 @@
 		<key>Eureka.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>Firebase.xcscheme</key>
 		<dict>
