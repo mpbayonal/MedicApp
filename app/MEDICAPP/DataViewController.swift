@@ -59,15 +59,15 @@ class DataViewController: UIViewController {
                 let sexo = value1?["sexo"] as? String
             let edad = value1?["edad"] as? Int
                   
-            self.nombre?.text = (nombre ?? "") + " " + (apellido ?? "")
+            self.nombre?.text = nombre! + " " + apellido!
                 print(peso)
-            self.edad?.text = String(edad ?? 0)
-            self.peso?.text = String(peso ?? 0)
+            self.edad?.text = String(edad!)
+            self.peso?.text = String(peso!)
                 
                print(value1)
-            self.altura?.text = String(altura ?? 0)
-            self.telefono?.text = String(telefono ?? 0)
-            self.sexo?.text = sexo ?? ""
+            self.altura?.text = String(altura!)
+            self.telefono?.text = String(telefono!)
+            self.sexo?.text = sexo!
               
         
               

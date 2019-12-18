@@ -67,7 +67,6 @@ class login2ViewController: FormViewController {
                              self.performSegue(withIdentifier: "loginToHomeCuidador", sender: nil)
                             personatipo = "1"
                             user1 = userID
-                            print(userID)
                             
                         }
                     // ...
