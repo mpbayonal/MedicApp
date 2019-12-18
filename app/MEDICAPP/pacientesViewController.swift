@@ -56,7 +56,15 @@ class pacientesViewController: UIViewController, UITableViewDataSource, UITableV
                 
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "HH':'mm"
-                userID = user1
+                print(Auth.auth().currentUser!.uid)
+                
+                    userID = Auth.auth().currentUser!.uid
+                user1 = userID
+               
+                print(userID)
+                print("!!!!!!!!!!!!")
+                print(user1)
+               
                 
                 db.child("users/\(userID)/pacientes").observe(.value, with: { snapshot in
                     self.pillList.removeAll()
@@ -175,7 +183,7 @@ class pacientesViewController: UIViewController, UITableViewDataSource, UITableV
                 let deleteAction = UIContextualAction(style: .destructive, title: "Eliminar") { (action, view, handler) in
                     os_log("Paciente pill action Tapped.", log: OSLog.default, type: .debug)
                     
-                   var userID = Auth.auth().currentUser!.uid
+                  
                     db.child("users/\(userID)/pacientes/\(pill.uuid)").removeValue {_,_ in
                         }
                     

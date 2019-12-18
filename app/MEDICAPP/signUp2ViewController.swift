@@ -92,7 +92,7 @@ class signUp2ViewController: FormViewController {
          if error == nil {
              print("You have successfully signed up")
             userID = Auth.auth().currentUser!.uid
-            print(userID)
+           
             
             db.child("users/\(userID)/perfil/nombre").setValue(nombre)
             

@@ -190,7 +190,7 @@ class PillList: UIViewController, UITableViewDataSource, UITableViewDelegate {
        
         if (pill.status == 1){
             cell.backgroundColor = UIColor.green
-            cell.pillImage.image = #imageLiteral(resourceName: "greenTick")
+            
         }
         else
         {
